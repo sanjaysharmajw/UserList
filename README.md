@@ -13,7 +13,7 @@ To get started with this project, follow these steps:
 
 ## Screenshots
 
-![App Screenshot](https://raw.githubusercontent.com/sanjaysharmajw/UserList/5bac888c63682ca7cc00b97cac04c86ae8030187/lib/ScreenShots/Screenshot_20240227_122904.png)
+![App Screenshot](https://raw.githubusercontent.com/sanjaysharmajw/UserList/5bac888c63682ca7cc00b97cac04c86ae8030187/lib/ScreenShots/Screenshot_20240227_122904.png),
 
 
 ## Badges
@@ -33,11 +33,6 @@ Add badges from somewhere like: [shields.io](https://shields.io/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/)
 
 [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/)
-
-
-## Support
-
-I hope you found this article enjoyable! If you appreciate the information provided, you have the option to support me by Buying Me A Coffee! Your gesture would be greatly appreciated!
 
 
 ## Support
