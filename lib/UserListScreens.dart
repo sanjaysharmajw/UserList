@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:post_project/ConnectionLost.dart';
+import 'package:post_project/Controller/NetworkController.dart';
 import 'package:post_project/Controller/UserListController.dart';
 import 'package:post_project/UserItems.dart';
 
@@ -12,7 +14,9 @@ class UserListScreen extends StatefulWidget {
 }
 
 class _UserListScreenState extends State<UserListScreen> {
-  final userListController = Get.put(UserListController(),permanent: true);
+
+  final userListController = Get.put(UserListController(), permanent: true);
+  final liveInternet = Get.put(NetworkController(), permanent: true);
 
   @override
   Widget build(BuildContext context) {
@@ -34,25 +38,34 @@ class _UserListScreenState extends State<UserListScreen> {
                 color: Colors.white,
                 fontWeight: FontWeight.w600)),
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: Obx(() {
-              return userListController.getUserList.isEmpty
-                  ? const Center(
-                      child: Text("data"),
-                    )
-                  : ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: userListController.getUserList.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return UserItems(
-                            data: userListController.getUserList[index]);
-                      });
-            }),
-          )
-        ],
-      ),
+      body: Obx(() {
+        return Column(
+          children: [
+            Expanded(
+                child: liveInternet.checkConnectivityResult.value
+                    ? const ConnectionLost()
+                    :
+                userListController.getUserList.isEmpty
+                    ? const Center(child: CircularProgressIndicator())
+                    : ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: userListController.getUserList.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return UserItems(data: userListController.getUserList[index]);
+                    })
+            ),
+            Visibility(
+              visible:  liveInternet.checkConnectivityResult.value?true:false,
+              child: Container(
+                color: Colors.green,
+                height: 50,
+                width: double.infinity,
+                child: const Center(child: Text("No Connection", style: TextStyle(color: Colors.white, fontSize: 20))),
+              ),
+            )
+          ],
+        );
+      }),
     );
   }
 }

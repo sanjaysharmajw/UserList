@@ -10,3 +10,4 @@ com.example.post_project.app-rs-8 /Users/sanjaysharma/Documents/Contribution/Use
 com.example.post_project.app-mergeDebugResources-9 /Users/sanjaysharma/Documents/Contribution/UserList/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir
 com.example.post_project.app-mergeDebugResources-10 /Users/sanjaysharma/Documents/Contribution/UserList/build/app/intermediates/incremental/debug/mergeDebugResources/stripped.dir
 com.example.post_project.app-merged_res-11 /Users/sanjaysharma/Documents/Contribution/UserList/build/app/intermediates/merged_res/debug
+com.example.post_project.app-packaged_res-12 /Users/sanjaysharma/Documents/Contribution/UserList/build/connectivity_plus/intermediates/packaged_res/debug
